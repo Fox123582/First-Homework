@@ -118,7 +118,7 @@ arrForMultiplication.forEach((el) => {
     multiplicationPositiveNumber = multiplicationPositiveNumber * el;
 })
 
-console.log('Знайти добуток позитивних елементів',multiplicationPositiveNumber);
+console.log('9.Знайти добуток позитивних елементів',multiplicationPositiveNumber);
 
 ////9/////
 
