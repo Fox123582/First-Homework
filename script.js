@@ -76,17 +76,17 @@ let evenPositiveNumber = 0;
 const evenNumbers = arrNumbers.filter((el) => {
     return el % 2 === 0 && el > 0;
 })
-
+//console.log(evenNumbers);
 evenPositiveNumber = evenNumbers.length-1;
 console.log('6.Знайти кількість парних позитивних елементів',evenPositiveNumber);
 
 ///6////
 
 ////7////
-let sumEvenPositiveNumber = 1;
+let sumEvenPositiveNumber = 0;
 
 evenNumbers.forEach((el) => {
-    sumEvenPositiveNumber = sumEvenPositiveNumber * el;
+    sumEvenPositiveNumber = sumEvenPositiveNumber + el;
 })
 
 console.log('7.Знайти суму парних позитивних елементів',sumEvenPositiveNumber);
