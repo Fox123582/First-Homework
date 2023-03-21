@@ -1,0 +1,21 @@
+html{
+    height: 100%;
+    width: 100%;
+}
+body{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+.block{
+    position: relative;
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    transition: 2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
