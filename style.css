@@ -1,0 +1,176 @@
+input,
+button,
+select {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: transparent;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button,
+input[type="submit"] {
+    display: inline-block;
+    box-shadow: none;
+    background: transparent none;
+    cursor: pointer;
+}
+
+input:focus,
+input:active,
+button:focus,
+button:active,
+select:active {
+    outline: none;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:focus,
+:active {
+    outline: none;
+}
+
+
+
+
+
+
+body {
+    font-size: 23px;
+    display: flex;
+}
+
+input,
+select {
+    font-size: 20px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid black;
+    transition: opacity .5s ease, transform .5s ease;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form h2 {
+    font-size: 13px;
+    color: red;
+}
+
+.outerForm {
+    height: 550px;
+    width: 350px;
+    position: relative;
+    top: 100px;
+    left: 100px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+label {
+    padding-bottom: 5px;
+}
+
+.outterForName,
+.outterForSize,
+.outterStuffing,
+.outterForAdd,
+.outterForTextArea,
+.outterForButton {
+    padding-top: 15px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+.wrapperForStuff,
+.wrapperForAdd {
+    width: 250px;
+
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+#but {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+textarea {
+    border: 1px solid black;
+    resize: none;
+}
+
+form>div>label {
+    font-weight: 600;
+}
+
+.order {
+    margin-bottom: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    position: relative;
+    top: 100px;
+    left: 200px;
+    text-align: center;
+    animation: appearance 2s forwards;
+}
+
+.order h2 {
+    margin-bottom: 10px;
+}
+
+.containerOrder {
+    width: 500px;
+    height: 200px;
+    animation: movement 1.5s forwards;
+}
+
+.containerOrder :not(:first-child) {
+    transition: 2s;
+    animation: movement 1s;
+}
+
+@keyframes appearance {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes movement {
+    0% {
+        top: -100px
+    }
+
+    100% {
+        top: 100px
+    }
+}

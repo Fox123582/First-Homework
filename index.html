@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="outerForm">
+        <form action="" id="form">
+            <div class="outterForName">
+                <label for="userName">Имя</label>
+                <input placeholder="Max" type="text" id="userName">
+                <h2 id="hTwoForName"></h2>
+            </div>
+
+            <div class="outterForSize">
+                <label for="select">Розмір</label>
+                <select id="select" name="select" required>
+                    <option value="Маленький">Маленький</option>
+                    <option value="Великий">Великий</option>
+                </select>
+            </div>
+
+            <div class="outterStuffing">
+                <label>Види начинок</label>
+                <div class="wrapperForStuff">
+                    <label for="cheese">Сиp</label>
+                    <input type="checkbox" value="Сиpом" name="stuff" id="cheese">
+                    <label for="salat">Салат</label>
+                    <input type="checkbox" value="Салатом" name="stuff" id="salat">
+                    <label for="potato">Картопля</label>
+                    <input type="checkbox" value="Картоплею" name="stuff" id="potato">
+                </div>
+                <h2 id="hTwoForStuff"></h2>
+            </div>
+
+            <div class="outterForAdd">
+                <label>Добавки</label>
+                <div class="wrapperForAdd">
+                    <label for="flavoring">Приправа</label>
+                    <input type="checkbox" value="Приправою" name="add" id="flavoring">
+                    <label for="mayo">Майонез</label>
+                    <input type="checkbox" value="Майонезом" name="add" id="mayo">
+                </div>
+                <h2 id="hTwoForAdd"></h2>
+            </div>
+
+            <div class="outterForTextArea">
+                <label for="textarea">Ваші побажання</label>
+                <textarea maxlength="30" placeholder="Бургер без м'яса" name="addOption" id="textarea" cols="30"
+                    rows="4"></textarea>
+                <h2></h2>
+            </div>
+            <div class="outterForButton">
+                <button id="but">Замовити</button>
+            </div>
+        </form>
+    </div>
+    <div class="containerOrder"></div>
+
+
+
+
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
