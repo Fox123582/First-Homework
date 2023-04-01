@@ -53,8 +53,7 @@ getMoney()
                 flag = 0
             }
         }
-    })
-    .catch(()=>{
+    },()=>{
         let flag = 1
         while (flag){
             let currency = prompt(`Введіть валюту для зняття: (${availableCurrency()})`).toUpperCase()
@@ -66,6 +65,18 @@ getMoney()
             }
         }
     })
+    // .catch(()=>{
+    //     let flag = 1
+    //     while (flag){
+    //         let currency = prompt(`Введіть валюту для зняття: (${availableCurrency()})`).toUpperCase()
+    //         if((Object.keys(userData).includes(currency) || Object.keys(bankData).includes(currency)) && (bankData[currency].max > 0)){
+    //             // Проверяем, что сумма для снятия находится в допустимых пределах
+    //             let withdraw = +prompt(`Введіть суму зняття:`)
+    //             validateWithdrawal(withdraw,currency)
+    //             flag = 0
+    //         }
+    //     }
+    // })
     .finally(()=> console.log('Дякую, гарного дня 😊'))
 
 
