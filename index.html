@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+     <link rel="stylesheet" href="./styles/preventStyle.css">
+    <link rel="stylesheet" href="./styles/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="wrapperForAllContent">
+        <div class="wrapperForLeft">
+            <form action="">
+                <div class="header">
+                    <p class="MSI">MSI 2020</p>
+                    <h1>Hey!</h1>
+                    <p class="title">Let’s try to find a joke for you:</p>
+                </div>
+                <div class="radioButWrapper">
+                    <input name="radioBut"  id="random" type="radio">
+                    <label for="random">Random</label>
+                </div>
+                <div class="radioButWrapper">
+                    <input name="radioBut" id="categories" type="radio">
+                    <label for="categories">From categories</label>
+                </div>
+                <div class="buttons">
+
+                </div>
+                <div class="radioButWrapper">
+                    <input name="radioBut" id="search" type="radio">
+                    <label for="search">Search</label>
+                </div>
+                <input class="textArea" id="freeText" placeholder="Free text search..." type="text">
+                <div class="wrapperForSubmit">
+                    <button id="submit" type="submit">Get a joke</button>
+                </div>
+            </form>
+
+
+        </div>
+
+        <div class="wrapperForRight">
+            <h3>Favourite</h3>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
