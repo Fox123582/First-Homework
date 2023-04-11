@@ -1,0 +1,250 @@
+body{
+    font-family: Roboto, serif;
+    background: #FFFFFF;;
+    font-size: 24px;
+    color: #333333;
+}
+.header{
+    padding-bottom: 30px;
+}
+.header h1{
+    font-size: 32px;
+    line-height: 44px;
+}
+.MSI{
+    width: 87px;
+    height: 28px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+.header .title{
+    font-size: 24px;
+    line-height: 44px;
+}
+.wrapperForLeft{
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form{
+    width: 680px;
+    padding-bottom: 40px;
+    font-size: 18px;
+    line-height: 26px;
+}
+form .radioButWrapper{
+    margin-bottom: 10px;
+    display: flex;
+    gap: 15px;
+}
+.buttons{
+    margin-bottom: 15px;
+    display: none;
+}
+
+.textArea{
+    display: none;
+    width: 100%;
+    height: 35px;
+    border: 2px solid #333333;
+    border-radius: 10px;
+}
+
+.activate{
+    display: block;
+    animation: slideIn 1s;
+}
+
+
+
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.buttons button{
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 12px;
+    width: 85px;
+    height: 28px;
+    box-sizing: border-box;
+    border: 2px solid #F8F8F8;
+    border-radius: 6px;
+    color: #ABABAB;
+}
+
+
+.buttons button.active{
+    transition: .5s;
+    color: black;
+    background-color:#F8F8F8;
+}
+
+.wrapperForSubmit button{
+    margin-top: 20px;
+    color: #FFFFFF;
+    width: 152px;
+    height: 42px;
+    text-align: center;
+    background: linear-gradient(90.55deg, #8EA7FF 0%, #7291FF 100%);
+    border-radius: 10px;
+}
+
+
+
+
+.jokeWrapper{
+    display: flex;
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    width: 680px;
+    background: #F8F8F8;
+    border-radius: 20px;
+}
+
+
+.id{
+    display: inline-block;
+    font-size: 10px;
+    margin-right: 5px;
+}
+
+.wrapperForEmail{
+    width: 50px;
+}
+.innerEmail{
+    position: relative;
+    width: 30px;
+    left: 30px;
+    border-radius: 50%;
+}
+.email{
+    position: relative;
+    top: 5px;
+    width: 35px;
+    height: 35px;
+}
+
+.lastUpdate{
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+.content{
+    width: 540px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    margin-left: 40px;
+
+}
+.pUnliked{
+    line-height: 26px;
+    font-size: 13px;
+    width: 490px;
+}
+.details{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.lastUpdate{
+ color: #ABABAB;
+}
+.category{
+    display: none;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    font-size: 10px;
+    width: 107px;
+    height: 24px;
+    border-radius: 6px;
+    text-transform: uppercase;
+}
+.categoryActive{
+    display: flex;
+    background: #FFFFFF;
+}
+.wrapperForHeart{
+    position: relative;
+    right: 20px;
+}
+.heart{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.wrapperForRight{
+    min-height: 100vh;
+    height: auto;
+    box-sizing: border-box;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #F8F8F8;
+}
+
+.wrapperForRight h3{
+    width: 84px;
+    height: 28px;
+    font-size: 20px;
+    line-height: 28px;
+    color: #ABABAB;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    text-align: left;
+    align-self: flex-start;
+}
+.wrapperForAllContent{
+    display: flex;
+    height: auto;
+}
+
+
+.wrapperLiked{
+    width: 95%;
+    margin-top: 30px;
+    background: white;
+}
+.wrapperForHeartLiked{
+    right: 35px;
+}
+.likedP{
+    width: 400px;
+    font-size: 15px;
+}
+
+.wrapperForHeartLiked{
+    right: 30px;
+}
+.jokeWrapper[data-liked='liked']{
+    display: flex;
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 500px;
+    background: white;
+    border-radius: 20px;
+}
