@@ -1,0 +1,30 @@
+img{
+    width: 900px;
+}
+.color{
+    color: #cccccc;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.conForColors div{
+    height: 35px;
+    width: 25px;
+    margin: 1px 2px;
+    background-color: #bbb;
+    border-radius: 2px;
+    display: inline-block;
+    transition: box-shadow 0.6s ease;
+    cursor: pointer;
+}
+.conForColors{
+    display: flex;
+    justify-content: center;
+}
+.active ,.conForColors div:hover{
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
