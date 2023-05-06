@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="../src/styles/style.css">
+    <link rel="stylesheet" href="../src/styles/preventStyle.css">
+    <link rel="stylesheet" href="../src/styles/styleForForms.css">
+</head>
+<body>
+<header>
+    <div class="wrapForLogo">
+        <a href="../index.html"><img id="logo" src="../images/logo.png" alt=""></a>
+    </div>
+    <div class="wrapForRegistration">
+        <div>Hi,<a href="./login.html" class="logIn">Log in</a></div>
+        <div class="wrapperForCartAndCounter">
+            <a class="cart" href="./login.html"><img src="../images/shopping-cart.png" alt=""></a>
+            <div class="countProducts">0</div>
+        </div>
+    </div>
+</header>
+    <div class="wrapForForms">
+        <div class="wrapForLeftForm">
+            <h2>Secure Sign In</h2>
+            <p>For current customers</p>
+            <div class="error">
+                <p></p>
+            </div>
+            <form id="signIn" action="">
+                <label>
+                    <input id="emailSignIn" placeholder="Email address" type="email" required>
+                </label>
+                <label>
+                    <input id="passwordSignIn" placeholder="Password" type="password" required>
+                </label>
+                <button class="but" type="submit">
+                   Sign in
+                </button>
+            </form>
+        </div>
+        <div class="wrapForRightForm">
+            <h2>Quick Registration</h2>
+            <p>For new customers</p>
+            <div class="error">
+                <p></p>
+            </div>
+            <form id="register" action="">
+                <label>
+                    <input id="registerName" placeholder="Full name" type="text" required>
+                </label>
+                <label>
+                    <input id="registerEmail" placeholder="Email address" type="email" required>
+                </label>
+                <label>
+                    <input id="registerPassword" placeholder="Password" type="password" required>
+                </label>
+                <label>
+                    <input id="verifyPassword" placeholder="Verify password" type="password" required>
+                </label>
+                <button class="but" type="submit">Create account</button>
+            </form>
+        </div>
+    </div>
+
+
+<script type="module" src="../src/scripts/mainScriptForLogin.js"></script>
+</body>
+</html>
