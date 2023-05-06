@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Account</title>
+    <link rel="stylesheet" href="../src/styles/style.css">
+    <link rel="stylesheet" href="../src/styles/preventStyle.css">
+    <link rel="stylesheet" href="../src/styles/styleForAccount.css">
+</head>
+<body>
+
+<header>
+    <div class="wrapForLogo">
+        <a href="../index.html"><img id="logo" src="../images/logo.png" alt=""></a>
+    </div>
+    <div class="wrapForRegistration">
+        <div>Hi,<a href="./account.html" class="logIn">Log in</a></div>
+        <div class="wrapperForCartAndCounter">
+            <a class="cart" href="./login.html"><img src="../images/shopping-cart.png" alt=""></a>
+            <div class="countProducts">0</div>
+        </div>
+    </div>
+</header>
+
+<div class="wrapForShoppingCart">
+    <div class="wrapForLeftSide">
+        <h2>Ordered items</h2>
+        <table id="tableForCart">
+            <thead>
+            <tr>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Sale</th>
+                <th>Quantity</th>
+                <th>Total</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <div class="wrapForRightSide">
+        <h2>My order summary</h2>
+        <div class="wrapForAccountName">
+            <p>Name:</p>
+            <p class="accountName"></p>
+        </div>
+        <div class="wrapForEmail">
+            <p>Email:</p>
+            <p class="accountEmail"></p>
+        </div>
+        <div class="wrapForButtonDeleteAcc">
+            <button id="deleteAccount">Delete Account</button>
+        </div>
+    </div>
+</div>
+
+
+<script type="module" src="../src/scripts/mainScriptForAccount.js"></script>
+</body>
+
+
+</html>
