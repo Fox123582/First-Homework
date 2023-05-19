@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+}
+.wrapperForAllContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tittle{
+    margin-top: 20px;
+}
+.wrapperForInputs{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+    border: 1px solid grey;
+    height: 100px;
+    width: 700px;
+    margin-top: 30px;
+}
+.inputToDo{
+    width: 200px;
+    height: 30px;
+    text-indent: 10px;
+    border-radius:4px;
+    border: 1px solid grey;
+}
+.inputToDo::placeholder{
+    text-indent: 10px;
+}
+.mainButton{
+    cursor: pointer;
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius:4px;
+}
+.notFound{
+    font-size: 30px;
+    width: 300px;
+    text-align: center;
+    background-color: rgba(255, 0, 0, 0.5);;
+    color: red;
+    margin-top: 30px;
+    border-radius: 10px;
+}
