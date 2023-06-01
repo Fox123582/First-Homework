@@ -1,3 +1,1 @@
-# First-Homework
-
-https://t.me/fox123582
+# 25,26-Homework
