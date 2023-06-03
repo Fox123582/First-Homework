@@ -1,6 +1,6 @@
 import React, {useContext, useRef, useState} from 'react';
-import Input from "../global/input";
-import Button from "../global/button";
+import Input from "../common/input";
+import Button from "../common/button";
 import logInPageContext from "../../context/logInPageContext";
 
 function Form({reg = false,styles,changeError,...props}) {

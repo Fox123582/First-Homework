@@ -1,17 +1,20 @@
-import React, {useContext, useEffect, useState} from 'react';
-import Button from "../global/button";
-import cart from '../../images/shopping-cart.png'
-import localStorage from "../../localStorage";
+import React, { useEffect, useState} from 'react';
+import Button from "../common/button";
+import cart from '../../common/images/shopping-cart.png'
+import localStorage from "../../services/localStorage";
 import {useNavigate} from "react-router-dom";
-import API from "../../API";
-import appContext from "../../context/appContext";
+import API from "../../services/API";
+import {useDispatch} from "react-redux";
+import { setPerson} from "../../store/userSlice";
 
 
 function SectionGood({ styles,elem,...props}) {
     let [clickButState,setClickButState] = useState(false)
     let person = localStorage.getFromLocalstorage()
-    const {changeState} = useContext(appContext)
+
     const nav = useNavigate()
+    const dispatch = useDispatch()
+
 
     useEffect(()=>{
             if (person.id){
@@ -22,7 +25,6 @@ function SectionGood({ styles,elem,...props}) {
                 })
             }
     },[])
-
     function addAndDelete(){
         if (clickButState){
             person.shoppingCart.forEach((el,i) => {
@@ -32,7 +34,7 @@ function SectionGood({ styles,elem,...props}) {
             })
             localStorage.saveToLocalstorage(person)
             API.changeAllData(person)
-            changeState(person)
+            dispatch(setPerson(person))
             setClickButState(!clickButState)
         } else {
             const createGood = {
@@ -42,10 +44,11 @@ function SectionGood({ styles,elem,...props}) {
             person.shoppingCart.push(createGood)
             localStorage.saveToLocalstorage(person)
             API.changeAllData(person)
-            changeState(person)
+            dispatch(setPerson(person))
             setClickButState(!clickButState)
         }
     }
+
     function handleClick(){
         if (person.id){
             addAndDelete()
@@ -79,7 +82,7 @@ function SectionGood({ styles,elem,...props}) {
 
     return (
         <section {...props} className={styles.category__container}>
-            <img src={require(`../../images/products/${elem.img.toLowerCase()}.png`)} alt={elem.title}/>
+            <img src={require(`../../common/images/products/${elem.img.toLowerCase()}.png`)} alt={elem.title}/>
             <div className={styles.name}>{elem.title}</div>
             {saleIs()}
             <div className={styles.price}>{countPriceWithSale()}$</div>
