@@ -1,16 +1,18 @@
-import React, {useContext, useEffect, useState} from 'react';
-import imageLogo from '../../images/logo.png'
-import imageCart from '../../images/shopping-cart.png'
+import React, { useEffect, useState} from 'react';
+import imageLogo from '../../common/images/logo.png'
+import imageCart from '../../common/images/shopping-cart.png'
 import styles from './style.module.css'
 import {useNavigate} from "react-router-dom";
-import localStorage from "../../localStorage";
-import API from "../../API";
-import appContext from "../../context/appContext";
+import localStorage from "../../services/localStorage";
+import API from "../../services/API";
+import {useDispatch, useSelector} from "react-redux";
+import {setPerson} from "../../store/userSlice";
 
 function Header({person}) {
     let [counter,setCounter] = useState(0)
     const nav = useNavigate()
-    const {changeState} = useContext(appContext)
+    const dispatch = useDispatch()
+    const personFromStore = useSelector(state => state.userSlice)
     function isLogin(){
         if (person.id){
             return <a onClick={()=>nav('')} className={styles.logIn}>
@@ -33,7 +35,7 @@ function Header({person}) {
         API.changeStatus(person)
         localStorage.resetLocalStorage()
         setCounter(0)
-        changeState('')
+        dispatch(setPerson([]))
         nav('')
     }
 
@@ -49,7 +51,7 @@ function Header({person}) {
         if (person.id){
             setCounter(person.shoppingCart.length)
         }
-    },[changeState])
+    },[personFromStore])
 
 
 

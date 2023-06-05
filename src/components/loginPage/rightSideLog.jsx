@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import ErrorBlock from "../global/errorBlock";
+import ErrorBlock from "../common/errorBlock";
 import Form from "./form";
 
 function RightSideLog({styles, ...props}) {

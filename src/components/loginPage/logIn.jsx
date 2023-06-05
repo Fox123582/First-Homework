@@ -2,21 +2,25 @@ import React, {useContext, useEffect, useState} from 'react';
 import LeftSideLog from "./leftSideLog";
 import styles from './style.module.css'
 import RightSideLog from "./rightSideLog";
-import API from "../../API";
+import API from "../../services/API";
 import LogInPageContext from "../../context/logInPageContext";
-import localStorage from "../../localStorage";
+import localStorage from "../../services/localStorage";
 import {useNavigate} from "react-router-dom";
 import appContext from "../../context/appContext";
+import {useDispatch, useSelector} from "react-redux";
+import {setPerson} from "../../store/userSlice";
 
 function LogIn(props) {
     const nav = useNavigate()
-    const {changeState} = useContext(appContext)
+    //const {changeState} = useContext(appContext)
+    const dispatch = useDispatch()
+    const person = useSelector(state=>state.userSlice)
 
     let [allUsers,setAllUsers] = useState([])
     function changeStatus(elem){
         API.changeStatus(elem).then(res => {
             localStorage.saveToLocalstorage(res.data)
-            changeState(res.data)
+            dispatch(setPerson(res.data))
         })
 
         nav(-1)
@@ -32,7 +36,7 @@ function LogIn(props) {
         }
         API.setNewUser(user).then(res => {
             localStorage.saveToLocalstorage(res.data)
-            changeState(res.data)
+            dispatch(setPerson(res.data))
         })
         nav(-1)
     }
