@@ -50,13 +50,9 @@ section{
     width: 25px;
 }
 .butForBuy{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: red;
     position: absolute;
     height: 30px;
-    width: 50px;
     border-radius: 5px;
     bottom: 15px;
     right: 10px;
