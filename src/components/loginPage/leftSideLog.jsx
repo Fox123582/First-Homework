@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import ErrorBlock from "../common/errorBlock";
 import Form from "./form";
+import FormFormik from "./formFormik";
 
 function LeftSideLog({styles,...props}) {
     let [error,setError] = useState({
@@ -10,7 +11,7 @@ function LeftSideLog({styles,...props}) {
 
     function drawError (){
         if (!error.status){
-            return <ErrorBlock className = {styles.error}>{error.description}</ErrorBlock>
+            return <ErrorBlock errors={error} className = {styles.error} ></ErrorBlock>
         }
         return ''
     }
@@ -25,7 +26,8 @@ function LeftSideLog({styles,...props}) {
             <h2>Secure Sign In</h2>
             <p>For current customers</p>
             {drawError()}
-            <Form changeError = {changeError} className={styles.signIn} styles = {styles}></Form>
+            {/*<Form changeError = {changeError} className={styles.signIn} styles = {styles}></Form>*/}
+            <FormFormik changeError = {changeError} className={styles.signIn} styles = {styles}></FormFormik>
         </div>
     );
 }

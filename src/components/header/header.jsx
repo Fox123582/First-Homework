@@ -68,7 +68,7 @@ function Header({person}) {
                     {isLogin()}
                 </p>
                 <div className={styles.wrapperForCartAndCounter}>
-                    <a><img src={`${imageCart}`} alt={'cart'}/></a>
+                    <a ><img onClick={()=>nav('/shoppingCart')} src={`${imageCart}`} alt={'cart'}/></a>
                     <div className={styles.countProducts}>{counter}</div>
                 </div>
                 {uiLogOut()}

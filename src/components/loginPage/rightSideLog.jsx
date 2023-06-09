@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import ErrorBlock from "../common/errorBlock";
 import Form from "./form";
+import FormFormik from "./formFormik";
 
 function RightSideLog({styles, ...props}) {
     let [errorReg,setErrorReg] = useState({
@@ -9,8 +10,9 @@ function RightSideLog({styles, ...props}) {
     })
 
     function drawError (){
+
         if (!errorReg.status){
-            return <ErrorBlock className = {styles.error} >{errorReg.description}</ErrorBlock>
+            return <ErrorBlock errors={errorReg} className = {styles.error} ></ErrorBlock>
         }
         return ''
     }
@@ -24,7 +26,8 @@ function RightSideLog({styles, ...props}) {
             <h2>Quick Registration</h2>
             <p>For new customers</p>
             {drawError()}
-            <Form changeError = {changeError} reg={true} className={styles.register} styles = {styles}></Form>
+            {/*<Form changeError = {changeError} reg={true} className={styles.register} styles = {styles}></Form>*/}
+            <FormFormik changeError = {changeError} reg={true} className={styles.register} styles = {styles}></FormFormik>
         </div>
     );
 }
