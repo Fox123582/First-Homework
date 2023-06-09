@@ -1,10 +1,20 @@
 import React from 'react';
 
 
-function ErrorBlock(props) {
+function ErrorBlock({errors,...props}) {
+
+    function errorsDisplay(){
+        if(errors.email){
+            return errors.email
+        }else if (errors.name){
+            return errors.name
+        }else if(errors.password){
+            return errors.password
+        }
+    }
     return (
         <div {...props}>
-            <p>{props.children}</p>
+            <p>{errorsDisplay()}</p>
         </div>
     );
 }

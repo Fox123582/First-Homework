@@ -1,4 +1,4 @@
-import React, {useContext, useRef, useState} from 'react';
+import React, {useContext,  useState} from 'react';
 import Input from "../common/input";
 import Button from "../common/button";
 import logInPageContext from "../../context/logInPageContext";

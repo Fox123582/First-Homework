@@ -11,89 +11,88 @@ import {useDispatch, useSelector} from "react-redux";
 import {setPerson} from "../../store/userSlice";
 
 function LogIn(props) {
-    const nav = useNavigate()
-    //const {changeState} = useContext(appContext)
-    const dispatch = useDispatch()
-    const person = useSelector(state=>state.userSlice)
+    // const nav = useNavigate()
+    // const dispatch = useDispatch()
+    //const person = useSelector(state=>state.userSlice)
 
     let [allUsers,setAllUsers] = useState([])
-    function changeStatus(elem){
-        API.changeStatus(elem).then(res => {
-            localStorage.saveToLocalstorage(res.data)
-            dispatch(setPerson(res.data))
-        })
+    // function changeStatus(elem){
+    //     API.changeStatus(elem).then(res => {
+    //         localStorage.saveToLocalstorage(res.data)
+    //         dispatch(setPerson(res.data))
+    //     })
+    //
+    //     nav(-1)
+    //
+    // }
 
-        nav(-1)
-
-    }
-
-    function createPerson(person){
-        const user={
-            name:person.name,
-            email:person.email,
-            password:person.password,
-            status:true
-        }
-        API.setNewUser(user).then(res => {
-            localStorage.saveToLocalstorage(res.data)
-            dispatch(setPerson(res.data))
-        })
-        nav(-1)
-    }
-    function clickButToSignIn(toCheckUser,reg = false){
-
-        let findUser = allUsers.find(element => element.email === toCheckUser.email) || []
-        let error
-
-        if(toCheckUser.password === '' || toCheckUser.email === ''){
-            error = {
-                status: false,
-                description:'Not all fields are field'
-            }
-            return error
-        }
-        if(findUser.email && reg){
-            error = {
-                status:false,
-                description:'Email already exist'
-            }
-            return error
-        }
-        if (findUser.length === 0 && !reg){
-            error = {
-                status:false,
-                description:'Invalid email'
-            }
-            return error
-        }
-        if (!reg &&findUser && findUser.password !== toCheckUser.password){
-            error = {
-                status:false,
-                description:'Invalid password'
-            }
-            return error
-        }
-        if (toCheckUser.password !== toCheckUser.verify && reg){
-            error = {
-                status:false,
-                description:'Password dont match'
-            }
-            return error
-        }
-        if (!reg){
-            changeStatus(findUser)
-            return error = {
-                status:true
-            }
-        } else if (reg){
-            createPerson(toCheckUser)
-            return error = {
-                status:true
-            }
-        }
-
-
-    }
+    // function createPerson(person){
+    //     const user={
+    //         name:person.name,
+    //         email:person.email,
+    //         password:person.password,
+    //         status:true
+    //     }
+    //     API.setNewUser(user).then(res => {
+    //         localStorage.saveToLocalstorage(res.data)
+    //         dispatch(setPerson(res.data))
+    //     })
+    //     nav(-1)
+    // }
+    // function clickButToSignIn(toCheckUser,reg = false){
+    //
+    //     let findUser = allUsers.find(element => element.email === toCheckUser.email) || []
+    //     let error
+    //
+    //     if(toCheckUser.password === '' || toCheckUser.email === ''){
+    //         error = {
+    //             status: false,
+    //             description:'Not all fields are field'
+    //         }
+    //         return error
+    //     }
+    //     if(findUser.email && reg){
+    //         error = {
+    //             status:false,
+    //             description:'Email already exist'
+    //         }
+    //         return error
+    //     }
+    //     if (findUser.length === 0 && !reg){
+    //         error = {
+    //             status:false,
+    //             description:'Invalid email'
+    //         }
+    //         return error
+    //     }
+    //     if (!reg &&findUser && findUser.password !== toCheckUser.password){
+    //         error = {
+    //             status:false,
+    //             description:'Invalid password'
+    //         }
+    //         return error
+    //     }
+    //     if (toCheckUser.password !== toCheckUser.verify && reg){
+    //         error = {
+    //             status:false,
+    //             description:'Password dont match'
+    //         }
+    //         return error
+    //     }
+    //     if (!reg){
+    //         changeStatus(findUser)
+    //         return error = {
+    //             status:true
+    //         }
+    //     } else if (reg){
+    //         createPerson(toCheckUser)
+    //         return error = {
+    //             status:true
+    //         }
+    //     }
+    //
+    //
+    // }
 
 
     useEffect(()=>{
@@ -102,7 +101,7 @@ function LogIn(props) {
 
 
     return (
-        <LogInPageContext.Provider value={{clickButToSignIn}}>
+        <LogInPageContext.Provider value={{allUsers}}>
             <div className={styles.wrapForForms}>
                 <LeftSideLog styles={styles} className={styles.wrapForLeftForm}></LeftSideLog>
                 <RightSideLog styles={styles} className={styles.wrapForRightForm}></RightSideLog>
