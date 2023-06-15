@@ -15,7 +15,7 @@ function Header({person}) {
     const personFromStore = useSelector(state => state.userSlice)
     function isLogin(){
         if (person.id){
-            return <a onClick={()=>nav('')} className={styles.logIn}>
+            return <a onClick={()=>nav('/account')} className={styles.logIn}>
                         {person.name}
                     </a>
         } else {

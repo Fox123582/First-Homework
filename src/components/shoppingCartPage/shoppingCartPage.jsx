@@ -1,8 +1,15 @@
-import React from 'react';
+import React  from 'react';
+import LeftSideCartComponent from "./leftSideCartComponent";
+import styles from './style.module.css'
+import RightSideCartComponent from "./rightSideCartComponent";
 
-function ShoppingCartPage(props) {
+function ShoppingCartPage() {
+
     return (
-        <div style={{color:'black'}}>Cart</div>
+        <div className={styles.wrapForShoppingCart}>
+            <LeftSideCartComponent styles={styles}></LeftSideCartComponent>
+            <RightSideCartComponent styles={styles}></RightSideCartComponent>
+        </div>
     );
 }
 
