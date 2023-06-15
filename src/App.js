@@ -11,12 +11,16 @@ import MainPageMUI from "./components/mainPageWithMUI/mainPageMUI";
 import PrivateRouteForRegisterPage from "./hoc/PrivateRouteForRegisterPage";
 import ShoppingCartPage from "./components/shoppingCartPage/shoppingCartPage";
 import PrivateRouteForCart from "./hoc/privateRouteForCart";
+import AccountPage from "./components/accountPage/accountPage";
+import PrivateRouteForAccountPage from "./hoc/privateRouteForAccountPage";
 
 function App() {
 
     const [isAuth,IsAuthSet] = useState(false)
     const dispatch = useDispatch()
     const person = useSelector(state=>state.userSlice)
+
+
 
     useEffect(()=>{
         IsAuthSet(local.getFromLocalstorage().id ? true : false)
@@ -43,6 +47,11 @@ function App() {
                 <PrivateRouteForCart isAuth={isAuth}>
                     <ShoppingCartPage></ShoppingCartPage>
                 </PrivateRouteForCart>
+            }/>
+            <Route path={'/account'} element={
+                <PrivateRouteForAccountPage isAuth={isAuth}>
+                    <AccountPage></AccountPage>
+                </PrivateRouteForAccountPage>
             }/>
         </Routes>
     </div>

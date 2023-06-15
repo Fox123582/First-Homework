@@ -11,5 +11,7 @@ export default {
 
     getGoods: ()=> axios.get('https://634e9f834af5fdff3a625f84.mockapi.io/products'),
 
-    changeAllData: (person)=> axios.put(`https://634e9f834af5fdff3a625f84.mockapi.io/users/${person.id}`,person)
+    changeAllData: (person)=> axios.put(`https://634e9f834af5fdff3a625f84.mockapi.io/users/${person.id}`,person),
+
+    deleteAccount: (person)=> axios.delete(`https://634e9f834af5fdff3a625f84.mockapi.io/users/${person.id}`)
 }
